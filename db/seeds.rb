@@ -5,5 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-items = Item.create(image_url: '/app/assets/images/6.jpg')
-file = File.open(file.join(Rails.root, '/app/assets/images/6.jpg'))
+def picture(file_name)
+
+picture = Item.create!(
+	title: 'cat',
+	description: 'real cat',
+	price: '14',
+	image_url: "/app/assets/images/#{file_name}.jpg")
+
+end
+
+picture('chat')
