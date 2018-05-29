@@ -55,6 +55,30 @@ Rails.application.config.assets.precompile += %w( revolution.extension.slideanim
 Rails.application.config.assets.precompile += %w( revolution.extension.video.min.js )
 Rails.application.config.assets.precompile += %w( boomerang.min.js )
 
+Rails.application.config.assets.precompile += %w( bootstrap.min.css )
+Rails.application.config.assets.precompile += %w( swiper.min.css )
+Rails.application.config.assets.precompile += %w( hamburgers.min.css )
+Rails.application.config.assets.precompile += %w( animate.min.css )
+Rails.application.config.assets.precompile += %w( jquery.fancybox.min.css )
+Rails.application.config.assets.precompile += %w( font-awesome.min.css )
+Rails.application.config.assets.precompile += %w( ionicons.min.css )
+Rails.application.config.assets.precompile += %w( line-icons.css )
+Rails.application.config.assets.precompile += %w( line-icons-pro.css )
+Rails.application.config.assets.precompile += %w( linea-icons.css )
+Rails.application.config.assets.precompile += %w( boomerang.min.css )
+Rails.application.config.assets.precompile += %w( custom-style.css )
+Rails.application.config.assets.precompile += %w( settings.css )
+Rails.application.config.assets.precompile += %w( layers.css )
+Rails.application.config.assets.precompile += %w( navigation.css )
+
+
+
+
+
+
+
+
+
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.

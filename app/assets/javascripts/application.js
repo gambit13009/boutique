@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require jquery.min
 //= require swiper.min
+//= require popper.min
 //= require activestorage
 //= require turbolinks
 //= require jquery.min
@@ -41,7 +42,7 @@
 //= require jquery.themepunch.tools.min
 //= require nouislider.min
 //= require paraxify.min
-//= require popper.min
+
 //= require revolution-slider-shop-home-deco
 //= require revolution.extension.actions.min
 //= require revolution.extension.carousel.min
