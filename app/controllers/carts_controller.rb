@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
 
 	before_action :set_cart, only: [:show, :edit, :update, :destroy, :index]
+  respond_to :html, :js 
 
  def index
     @user = current_user
