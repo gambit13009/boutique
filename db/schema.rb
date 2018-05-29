@@ -10,8 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2018_05_29_105430) do
 
-ActiveRecord::Schema.define(version: 2018_05_28_125006) do
+  create_table "carts", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
+  create_table "carts_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "cart_id", null: false
+    t.index ["cart_id", "user_id"], name: "index_carts_users_on_cart_id_and_user_id"
+    t.index ["user_id", "cart_id"], name: "index_carts_users_on_user_id_and_cart_id"
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "title"
@@ -20,6 +33,20 @@ ActiveRecord::Schema.define(version: 2018_05_28_125006) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "orders_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "order_id", null: false
+    t.index ["order_id", "user_id"], name: "index_orders_users_on_order_id_and_user_id"
+    t.index ["user_id", "order_id"], name: "index_orders_users_on_user_id_and_order_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,6 +65,5 @@ ActiveRecord::Schema.define(version: 2018_05_28_125006) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
 
 end
