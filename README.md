@@ -144,9 +144,6 @@ Aller sur les liens Heroku suivants
 
 # Résultats
 
-1 Site de boutique en ligne fonctionel 
-2 bots, un instagram et l'autre twitter qui on bien scrappé, liké, follow et comenté avec l'adresse des trois pages.
-
 
 A vous de voir !
 
