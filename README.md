@@ -1,6 +1,6 @@
 
 
-# CHATBAT
+# chatl-om
 -------------
 
 # Introduction : Présentation de l'équipe
@@ -20,7 +20,7 @@
 
 ##Fait en pair programming
 
-![alt tag](images/pairProgramming.jpg)
+![alt tag](images/chat-deguise-sushi.png)
 
 -------------
 
