@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-def picture(file_name)
+def picture(*file_name)
 
 picture = Item.create!(
 	title: 'cat',
