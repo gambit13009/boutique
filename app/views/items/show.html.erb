@@ -17,7 +17,7 @@
           data-paddingleft="[0,0,0,0]"
           style="z-index: 5; text-transform: left; text-align: center; padding-top: 5%; padding-bottom: 5%;">
 
-<table style="text-align: center";>
+<table style="text-align: center; margin: auto;">
 	<thead>
 	<% @item = Item.find_by(id: params[:id])%>
 	</thead>
@@ -40,6 +40,11 @@
 	<tr>
 		<td>	
 			<img src="<%= @item.image_url %>" > 
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="#" class="btn btn-styled btn-gray-dark btn-outline">Ajouter au panier</a>
 		</td>
 	</tr>
 

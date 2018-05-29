@@ -33,7 +33,7 @@ def create
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+        format.html { redirect_to @cart, notice: 'Le panier a été créé avec succès.' }
         format.json { render :show, status: :created, location: @cart }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ end
 def update
     respond_to do |format|
       if @cart.update(cart_params)
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
+        format.html { redirect_to @cart, notice: 'Le panier a été mis à jour avec succès.' }
         format.json { render :show, status: :ok, location: @cart }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ def update
    def destroy
     @cart.destroy
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: 'Cart was successfully destroyed.' }
+      format.html { redirect_to carts_url, notice: 'Le panier a été supprimé avec succès.' }
       format.json { head :no_content }
     end
 end
