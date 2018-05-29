@@ -1,6 +1,6 @@
 
 
-# CHATBAT
+# chatl-om
 -------------
 
 # Introduction : Présentation de l'équipe
