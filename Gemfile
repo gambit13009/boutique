@@ -4,9 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'mailjet'
 gem 'rails', '~> 5.2.0'
 gem 'sprockets-rails'
 gem 'dotenv-rails'
+gem 'carrierwave', '~> 1.0'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
