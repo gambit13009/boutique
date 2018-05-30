@@ -79,8 +79,7 @@ et Tester la Version en Localhost en allant dans ton navigateur sur :
 Aller sur les liens Heroku suivants
 
 
-> https://marseillewestcoast.herokuapp.com
-
+https://intense-sands-28535.herokuapp.com/
 
 
 
@@ -101,10 +100,10 @@ Aller sur les liens Heroku suivants
 ------------- comment le code a été fait : -------------
 
     1. Nouveau projet Rails : landing page
-        a. $ rails new lendingpage.2
+        a. $ rails new boutique
         b. Modif du gemfile (pour integration heroku ) 
     2. Nouveau Repo sur Github
-        a. cd dossier lendingpage.2
+        a. cd dossier boutique
         b. $ git init 
         c. $ git remote
         d. $ git Add . 
@@ -115,7 +114,7 @@ Aller sur les liens Heroku suivants
         b. $ git add .
         c. $ git commit -m "heroku"
         d. $ git push heroku master
-        e. Succés avec site en ligne appelé https://marseillewestcoast.herokuapp.com
+        e. Succés avec site en ligne appelé https://intense-sands-28535.herokuapp.com/
     4. Créer un compte Mailchimp pour les mails et la newsletter
         a. Créer un fichier .env avec les clées API de Mailchimp
         b. Dans le gitiniore rajouter le .env
@@ -126,7 +125,7 @@ Aller sur les liens Heroku suivants
         c. Verif heroku comparabilité avec un nouveau push heroku => ok
         d. $ heroku run rails db:migrate => ok
         e. Affichage des routes users : $ rails routes 
-        f. Vérification en ligne :   https://marseillewestcoast.herokuapp.com
+        f. Vérification en ligne :   https://intense-sands-28535.herokuapp.com/
     6. Configuration des pages en ligne en définissant seulement les routes 
         a. Dans config routes.rb :   
         b. $ verif avec rails routes => ok
