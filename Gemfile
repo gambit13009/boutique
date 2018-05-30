@@ -8,6 +8,7 @@ gem 'mailjet'
 gem 'rails', '~> 5.2.0'
 gem 'sprockets-rails'
 gem 'dotenv-rails'
+gem 'carrierwave', '~> 1.0'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
