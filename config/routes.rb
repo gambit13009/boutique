@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/home', to: 'home#show'
   resources :items, only: [:show]
-  resources :carts, only: [:show]
+  resources :carts
   devise_for :users, controllers: {
         sessions: 'users/sessions'}
   
