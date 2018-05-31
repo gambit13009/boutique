@@ -12,5 +12,9 @@ validates :price, presence: true
 
 validates :image_url, presence: true
 
+attr_accessor :item_pic
+
+mount_uploader :item_pic, AvatarUploader
+
 
 end
