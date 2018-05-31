@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 
-	#before_action :calcul_total, only: [:show]
+	before_action :calcul_total
   before_action :set_cart
   respond_to :html, :js 
 
@@ -44,7 +44,7 @@ def create
     end
 end
 
-def update
+  def update
     respond_to do |format|
       if @cart.update(cart_params)
         format.html { redirect_to @cart, notice: 'Le panier a été mis à jour avec succès.' }
@@ -59,11 +59,8 @@ def update
 
    def destroy
     @cart.destroy
-    respond_to do |format|
-      format.html { redirect_to carts_url, notice: 'Le panier a été supprimé avec succès.' }
-      format.json { head :no_content }
+    
     end
-end
 
 def add_to_cart
   @item = Item.find_by(id: params[:id])
@@ -75,6 +72,8 @@ def checkout
   @cart = current_user.cart.items 
   @order = Order.create(user_id: current_user.id)
   @order.items << @cart
+  destroy
+  Cart.create(user_id: current_user.id)
   redirect_to checkout_path
 end  
 
@@ -101,10 +100,12 @@ def cart_params
 
 def calcul_total
       @total = 0
-      if current_user.cart.items
+      if Cart.find_by(user_id: current_user.id) == nil
+      else
+      current_user.cart.items
       current_user.cart.items.each do |item|
         @total += item.price
-      else
+        puts @total
       end
       end
       return @total
