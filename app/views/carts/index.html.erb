@@ -9,23 +9,54 @@
     </tr>
   </thead>
   <% if @cart.items.length > 0 %>
-  <tbody>
-    <% @user.items.each do |item| %>
-      <tr scope="row">
-        <td><%= item.title %></td>
-        <td><%= (item.price).round %> €</td>
-        <td><%= link_to 'Voir', thumbnail_path(item.id), remote: true %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Etes-vous sur?' }, class: "btn btn-danger" %></td>
-      </tr>
+ <tbody>
+    <% @cart.items.all.each do |item| %>
+    <tr>
+      <td>
+        <img src="<%= item.image_url %>" > 
+      </td>
+
+      <td>
+        <%= item.title %>   
+      </td>
+      <td>
+        1       
+      </td>
+      <td>
+        <%= item.price %>       
+      </td>
+      
+    </tr>
     <% end %>
+    <tr>
+      
+    </tr>
   </tbody>
-    <%= "Panier id : #{@cart.id}" %>
-    <% else %>
-    <p>Panier vide!</p>
-    <%= "Panier id : #{@cart.id}" %>
-    <% end %>
+ <% end %>
 </table>
 
 
 
-<div id="cart-content"></div>
+
+
+<div class="text-center-right">
+<%= form_tag checkout_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      
+    <% end %>
+    <label class="amount">
+      <p> Pour passer votre commande, merci de bien vouloir payer : <%= @total   %> €</p>
+      
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="<%= (@total)*100 %>"
+          data-currency="eur"
+          data-locale="auto"></script>
+
+<% end %>
+</div>

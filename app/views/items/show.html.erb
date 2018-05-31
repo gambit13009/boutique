@@ -43,16 +43,15 @@
 			<div class="dc-image"><img src="<%= @item.image_url %>" ></div>
 		</td>
 	</tr>
+	<% if user_signed_in? %>
 	<tr>
 		<td>
 			 <%= link_to "AJOUTER", add_path, method: :post%>	
 		</td>
-	</tr></div></div>
+	</tr>
+
+<% else %><% end %></div></div>
 
 	</tbody>
 </table>
 </div>
-
-<div class="dc-item">
-        <div class="d-flex align-items-center">	<div class="dc-image"><img src="<%= @item.image_url %>" ></div>
-        </div></div>

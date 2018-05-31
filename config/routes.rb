@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/carts/:id', to: 'carts#add_to_cart', as: 'add'
   devise_for :users, controllers: {
         sessions: 'users/sessions'}
+  get '/users/edit', to: "devise/registrations#edit", as: "profile"
   get '/youpi', to: 'orders#index'
   post '/youpi', to: 'carts#checkout', as: 'checkout'   
   
