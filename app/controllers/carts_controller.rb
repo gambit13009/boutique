@@ -74,6 +74,8 @@ def checkout
   @order.items << @cart
   destroy
   Cart.create(user_id: current_user.id)
+  UserMailer.welcome_email(current_user.email).deliver_now!
+  puts current_user.email
   redirect_to checkout_path
 end  
 

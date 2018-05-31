@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   resources :items
   resources :carts
 	resources :charges
+  resources :mailers
   post '/carts/:id', to: 'carts#add_to_cart', as: 'add'
   devise_for :users, controllers: {
-        sessions: 'users/sessions'}
+
+        sessions: 'users/sessions', mailers: "mailers/user_mailer"}
   get '/users/edit', to: "devise/registrations#edit", as: "profile"
+
   get '/youpi', to: 'orders#index'
   post '/youpi', to: 'carts#checkout', as: 'checkout'   
   
