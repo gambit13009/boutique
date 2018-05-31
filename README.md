@@ -1,4 +1,5 @@
-
+attention : testez le projet en le clonant sur git hub et non sur heroku.
+pour le panier si vous avez une erreur lors du premier ajout reessayer en revenant en arriere avec precedent cela devrait marcher.
 
 # boutique en ligne de photos de chats
 -------------
