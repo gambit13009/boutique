@@ -1,16 +1,23 @@
 class AvatarUploader < CarrierWave::Uploader::Base
   
-#include Cloudinary::CarrierWave
+include Cloudinary::CarrierWave
 
-  #process :tags => ['item_pic']
+  process :tags => ['item_pic']
 
-  #version :standard do
-    #process :resize_to_fill => [100, 150, :north]
-  #end
+  version :standard do
+    process :resize_to_fill => [100, 150, :north]
+  end
 
-  #def public_id
-    #return "my_folder/" + Cloudinary::Utils.random_public_id;
-#end
+  def public_id
+    return "my_folder/" + Cloudinary::Utils.random_public_id;
+end
+
+  #uploader = AvatarUploader.new
+
+  #uploader.store!(my_file)
+
+  #uploader.retrieve_from_store!('my_file.png')
+
 
 
   # Include RMagick or MiniMagick support:
