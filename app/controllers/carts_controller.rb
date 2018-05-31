@@ -64,6 +64,14 @@ def update
     end
 end
 
+def add_to_cart(i)
+  current_user.cart.items << Item.find_by(id: i)
+  puts current_user.cart
+  puts user_signed_in? 
+  redirect_to cart_path
+
+end
+
 
 private
 
@@ -71,7 +79,7 @@ def set_cart
       if user_signed_in? && current_user.cart
         @cart = current_user.cart
       elsif user_signed_in?
-        @cart = Cart.create(user: current_user)
+        @cart = Cart.create(user_id: current_user.id)
       elsif @cart = Cart.find_by(id: session[:cart_id])
       else
         flash.now[:notice] = "Merci de vous connecter pour accéder à cette page."
