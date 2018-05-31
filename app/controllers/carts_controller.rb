@@ -14,12 +14,12 @@ end
   def show
   	@item = Item.all.find_by(id: params[:id])
 
-      respond_to do |f|
-        f.js   { render :layout => false }
-        f.html { redirect_to root_url }
-        f.json { head :no_content }
-end
-  end
+ #     respond_to do |f|
+ #       f.js   { render :layout => false }
+#        f.html { redirect_to }
+ #       f.json { head :no_content }
+#end
+  end 
 
 
 def new
@@ -64,7 +64,7 @@ def update
     end
 end
 
-def add_to_cart(i)
+def add_to_cart
   current_user.cart.items << Item.find_by(id: params[:id])
   puts current_user.cart
   puts user_signed_in? 
