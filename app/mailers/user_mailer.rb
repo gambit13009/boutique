@@ -1,13 +1,14 @@
 class UserMailer < ApplicationMailer
 
-  def welcome_email()
 
-     mail(from: "ajerome.david@laposte.net", to: "jerome.david@cegetel.net", 
+  def welcome_email(user)
+   users = user
+     mail(from: "ajerome.david@laposte.net", to: "#{users}", 
           subject: "Recapitulatif de votre commande")
+     puts "user"
+
    end
-
-
-   
-   
 end
+
+   
 
