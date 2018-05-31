@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
 
-	before_action :set_cart, only: [:show, :edit, :update, :destroy, :index]
+	before_action :calcul_total, only: [:show]
+  before_action :set_cart, only: [:show, :edit, :update, :destroy, :index]
   respond_to :html, :js 
 
  def index
@@ -14,12 +15,12 @@ end
   def show
   	@item = Item.all.find_by(id: params[:id])
 
-      respond_to do |f|
-        f.js   { render :layout => false }
-        f.html { redirect_to root_url }
-        f.json { head :no_content }
-end
-  end
+ #     respond_to do |f|
+ #       f.js   { render :layout => false }
+#        f.html { redirect_to }
+ #       f.json { head :no_content }
+#end
+  end 
 
 
 def new
@@ -64,6 +65,15 @@ def update
     end
 end
 
+def add_to_cart
+  @item = Item.find_by(id: params[:id])
+  current_user.cart.items << @item
+  redirect_to root_path
+
+
+end
+
+
 
 private
 
@@ -71,7 +81,7 @@ def set_cart
       if user_signed_in? && current_user.cart
         @cart = current_user.cart
       elsif user_signed_in?
-        @cart = Cart.create(user: current_user)
+        @cart = Cart.create(user_id: current_user.id)
       elsif @cart = Cart.find_by(id: session[:cart_id])
       else
         flash.now[:notice] = "Merci de vous connecter pour accéder à cette page."
@@ -86,11 +96,12 @@ def cart_params
       params.fetch(:cart, {})
     end
 
-    def calcul_total
+def calcul_total
       @total = 0
-      @cart.items.each do |item|
+      current_user.cart.items.each do |item|
         @total += item.price
       end
       return @total
-    end
+ end
+    
 end

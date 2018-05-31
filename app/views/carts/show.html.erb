@@ -1,2 +1,38 @@
 <h1>Contenu du panier</h1>
 
+<table>
+	<thead>
+		<th>produit</th>
+
+	</thead>
+
+	<tbody>
+		<% @cart.items.all.each do |item| %>
+		<tr>
+			<td>
+				<img src="<%= item.image_url %>" > 
+			</td>
+
+			<td>
+				<%= item.title %>		
+			</td>
+			<td>
+				<%= item.description %>				
+			</td>
+			<td>
+				<%= item.price %>				
+			</td>
+			
+		</tr>
+		<% end %>
+		<tr>
+			<%= @total %>
+		</tr>
+	</tbody>
+
+</table>
+
+
+
+
+
