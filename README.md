@@ -20,7 +20,7 @@
 
 ##Fait en pair programming
 
-![alt tag](images/chat-deguise-sushi.png)
+![alt tag](app/assets/images/chat-deguise-sushi.png)
 
 -------------
 
@@ -37,9 +37,7 @@ Avec utilisation de la méthode Agile :
 	2) Travail en commun organisé via https://trello.com/b/EGhU0CJy/boutique-en-ligne
 	3) Suivre une User Stories 
 	4) Donner de la forme à nos pages en intégrant un template WrapBootstrap
-	4) Faire une landing pages (une pour les Anglophones, une pour les Marseillais et une pour les étudiants)
-	5) Avoir un service de mailer, avec une newsletter de la bombe
-	6) Faire tourner nos opérations marketing grâce au Heroku Scheduler, pour avoir un afflux constant de personnes qui vont sur notre site
+	
 
 ------------   
 
@@ -56,7 +54,9 @@ Pour ouvrir chaque app et la tester il faut downloader le dossier, se placer ded
 
 Pour voir la base données exécuter en commande un
 
-> $ rails db:migrate
+> $ rails db:migrate     
+
+> $ rails db:seed
 
 Puis tapez la commande suivante pour tester en local l'appli:
 
@@ -89,17 +89,10 @@ https://intense-sands-28535.herokuapp.com/
 
 # Explications détaillés 
 
-------------- choix du design  -------------
-
-2 personnes ont disséqué les ressources proposées pour retenir certains points clés : 
-        ◦ Des éléments visuels attirants
-        ◦ Ne pas trop charger la landing page
-        ◦ Pas de Nav Bar (pour favoriser le call to action) 
-        ◦ Attirer le clic et favoriser les contacts 
 
 ------------- comment le code a été fait : -------------
 
-    1. Nouveau projet Rails : landing page
+    1. Nouveau projet Rails : 
         a. $ rails new boutique
         b. Modif du gemfile (pour integration heroku ) 
     2. Nouveau Repo sur Github
@@ -115,10 +108,10 @@ https://intense-sands-28535.herokuapp.com/
         c. $ git commit -m "heroku"
         d. $ git push heroku master
         e. Succés avec site en ligne appelé https://intense-sands-28535.herokuapp.com/
-    4. Créer un compte Mailchimp pour les mails et la newsletter
-        a. Créer un fichier .env avec les clées API de Mailchimp
+    4. Créer un compte Mailjet pour les envois de mails 
+        a. Créer un fichier .env avec les clées API de Mailjet
         b. Dans le gitiniore rajouter le .env
-        c. Sur mailchimp.com paramétrer avec le site heroku  
+        c. Sur mailjet, le paramétrer avec le site heroku  
     5. Paramètrer la base de donner des utilisateurs 
         a. $ rails generate scaffold user email:string
         b. $ rails db:migrate
