@@ -1,6 +1,6 @@
 
 
-# chatl-om
+# boutique en ligne de photos de chats
 -------------
 
 # Introduction : Présentation de l'équipe
@@ -132,13 +132,7 @@ https://intense-sands-28535.herokuapp.com/
         c. Verif avec heroku push (refaire étape 2def et 3bcd) => ok
     7. Ajout de Boostrap
         a. Insertion de Wrapboostrap dans notre application html  
-    8. Mise en place d'un tracking avec Mixpanel pour chaque landing page
-
-    9. Mise en place d'un bot Instagram
-    Génère des Likes, des commentaires et des followers
-       
-    10. Mise en place d'un Scheduler pour lancer les bots avec Heroku
-
+    
 
 
 # Résultats
