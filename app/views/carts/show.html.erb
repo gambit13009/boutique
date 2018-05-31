@@ -31,8 +31,33 @@
 	</tbody>
 
 </table>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="<%= (@total)*100 %>"
+          data-currency="eur"
+          data-locale="auto">
+          	
+    </script>
 
+<div class="text-center-right">
+<%= form_tag checkout_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      
+    <% end %>
+    <label class="amount">
+      <p> Pour passer votre commande, merci de bien vouloir payer : <%= @total   %> €</p>
+      
+    </label>
+  </article>
 
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="<%= (@total)*100 %>"
+          data-currency="eur"
+          data-locale="auto"></script>
 
-
-
+<% end %>
+</div>

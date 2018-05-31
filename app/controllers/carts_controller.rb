@@ -69,11 +69,14 @@ def add_to_cart
   @item = Item.find_by(id: params[:id])
   current_user.cart.items << @item
   redirect_to root_path
-
-
 end
 
-
+def checkout
+  @cart = current_user.cart.items 
+  @order = Order.create(user_id: current_user.id)
+  @order.items << @cart
+  redirect_to checkout_path
+end  
 
 private
 
