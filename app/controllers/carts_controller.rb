@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
 
-	before_action :calcul_total, only: [:show]
-  before_action :set_cart, only: [:show, :edit, :update, :destroy, :index]
+	#before_action :calcul_total, only: [:show]
+  before_action :set_cart
   respond_to :html, :js 
 
  def index
@@ -98,8 +98,11 @@ def cart_params
 
 def calcul_total
       @total = 0
+      if current_user.cart.items
       current_user.cart.items.each do |item|
         @total += item.price
+      else
+      end
       end
       return @total
  end

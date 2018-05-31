@@ -10,9 +10,7 @@ before_action :require_admin, only: [:index, :edit, :update, :destroy]
 
  
   def show
-    set_user
-    set_all_items
-    set_item
+    
   end
 
   def new

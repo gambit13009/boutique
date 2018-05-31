@@ -12,8 +12,8 @@
 //
 //= require rails-ujs
 
-//= require jquery
-//= require jquery_ujs
+
+
 //= require jquery.min
 //= require swiper.min
 //= require popper.min
@@ -23,7 +23,7 @@
 //= require jquery.themepunch.revolution.min
 //= require autosize.min
 //= require boomerang.min
-//= require bootstrap-sprockets
+
 //= require bootstrap-growl.min
 //= require bootstrap.min
 //= require classie
@@ -67,6 +67,6 @@
 //= require vide.min
 //= require viewportchecker.min
 //= require wow.min
-//= require cloudinary
+
 //= require_tree .
 
