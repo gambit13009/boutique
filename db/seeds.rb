@@ -10,14 +10,14 @@ def picture
 
 picture = Item.create!(
 	title: 'chat',
-	description: 'chat grimace',
+	description: 'Chat grimace',
 	price: '20',
 	image_url: "https://image.noelshack.com/fichiers/2018/22/2/1527579982-6.jpg")
 
 
 picture = Item.create!(
-	title: 'chat',
-	description: 'les mains en l'air',
+	title: 'Chat',
+	description: "les mains en l'air",
 	price: '25',
 	image_url: "https://image.noelshack.com/fichiers/2018/22/2/1527579982-100-chats.jpg")
 
