@@ -44,9 +44,9 @@
 	</tr>
 	<tr>
 		<td>
-			<a  id="add-item-to-cart" href="/carts/1" class="btn btn-styled btn-gray-dark btn-outline" action="/carts/1" >Ajouter au panier</a>
-			<a id="add-item-to-cart" href="/carts/1" class="btn btn-styled btn-gray-dark btn-outline" action="/carts/1"> <%= link_to "AJOUTER", add_path(params[:id]) %> </a>
-		</td>
+			<form action="add_to_cart(params[:id])" method="post">
+			 <%= link_to "AJOUTER", add_path(params[:id]) %>	
+			</form>
 		</td>
 	</tr>
 

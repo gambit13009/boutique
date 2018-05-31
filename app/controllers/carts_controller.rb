@@ -65,7 +65,7 @@ def update
 end
 
 def add_to_cart(i)
-  current_user.cart.items << Item.find_by(id: i)
+  current_user.cart.items << Item.find_by(id: params[:id])
   puts current_user.cart
   puts user_signed_in? 
   redirect_to cart_path

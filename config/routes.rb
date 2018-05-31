@@ -2,10 +2,9 @@ Rails.application.routes.draw do
   
   root 'home#index'
   get '/home', to: 'home#show'	
-  get '/carts/1', to: 'carts#test', as: 'test'
-  resources :items, only: [:show]
+  resources :items
   resources :carts
-  get '/carts/:id', to: 'carts#add_to_cart', as: 'add'
+  post '/carts/:id', to: 'carts#add_to_cart', as: 'add'
   devise_for :users, controllers: {
         sessions: 'users/sessions'}
   
