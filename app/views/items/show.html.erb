@@ -18,11 +18,12 @@
           style="z-index: 5; text-transform: left; text-align: center; padding-top: 5%; padding-bottom: 5%;">
 
 <table style="text-align: center; margin: auto;">
-	<thead>
-	<% @item = Item.find_by(id: params[:id])%>
+	<thead><div class="dc-header">
+	<% @item = Item.find_by(id: params[:id])%></div>
 	</thead>
 	<tbody>
-	<tr>	
+	<tr>    <div class="dc-item">
+        <div class="d-flex align-items-center">	
 		<td>
 			<%= @item.title%>
 		</td>
@@ -38,18 +39,22 @@
 		</td>
 	</tr>
 	<tr>
-		<td>	
-			<img src="<%= @item.image_url %>" > 
+		<td>    	
+			<div class="dc-image"><img src="<%= @item.image_url %>" ></div>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<form action="add_to_cart" method="post">
-			 <%= link_to "AJOUTER", add_path %>	
-			</form>
+
+			 <%= link_to "AJOUTER", add_path, method: :post %>	
+			
 		</td>
-	</tr>
+	</tr></div></div>
 
 	</tbody>
 </table>
 </div>
+
+<div class="dc-item">
+        <div class="d-flex align-items-center">	<div class="dc-image"><img src="<%= @item.image_url %>" ></div>
+        </div></div>

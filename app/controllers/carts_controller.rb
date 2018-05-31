@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
 
-	before_action :set_cart, only: [:show, :edit, :update, :destroy, :index]
+	before_action :calcul_total, only: [:show]
+  before_action :set_cart, only: [:show, :edit, :update, :destroy, :index]
   respond_to :html, :js 
 
  def index
@@ -65,12 +66,13 @@ def update
 end
 
 def add_to_cart
-  current_user.cart.items << Item.find_by(id: params[:id])
-  puts current_user.cart
-  puts user_signed_in? 
-  redirect_to cart_path
+  @item = Item.find_by(id: params[:id])
+  current_user.cart.items << @item
+  redirect_to root_path
+
 
 end
+
 
 
 private
@@ -94,11 +96,12 @@ def cart_params
       params.fetch(:cart, {})
     end
 
-    def calcul_total
+def calcul_total
       @total = 0
-      @cart.items.each do |item|
+      current_user.cart.items.each do |item|
         @total += item.price
       end
       return @total
-    end
+ end
+    
 end
